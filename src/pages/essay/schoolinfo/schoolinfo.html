@@ -1,0 +1,59 @@
+<link rel="stylesheet" href="../../../assets/iconFamily/iconfont.css">
+
+<ion-header>
+  <ion-toolbar  mode="ios">
+    <ion-title mode="ios">
+      院校资讯
+    </ion-title>
+    <ion-buttons>
+      <button ion-button (click)="goBack()">
+        <span class="iconfont" style="font-size: 20px">&#xe799;</span>
+      </button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+
+  <div class="head">
+    <div class="userPic">
+      <img src={{essay.userImg}}>
+    </div>
+    <div class="userName">
+      <span>{{essay.userName}}</span>
+    </div>
+  </div>
+
+  <h2 class="title">{{essay.title}}</h2>
+
+  <p class="content" *ngFor="let item of essayContent">
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{item}}
+  </p>
+
+  <p class="time">{{essay.creationTime}}</p>
+
+  <p class="good" >
+    <ion-icon name="thumbs-up"></ion-icon>
+    <span>{{essay.likeNum}}</span>
+  </p>
+
+  <div class="starAndHeart">
+
+    <div></div>
+
+
+    <button (click)="goodEssay()" [ngStyle]="{'display': !isLike? 'block' : 'none'}"  color="lightred"  outline ion-button icon-start>
+      <ion-icon name="heart"></ion-icon>
+      点赞
+    </button>
+
+    <button (click)="goodEssay()" [ngStyle]="{'display': isLike? 'block' : 'none'}" color="gray"  outline ion-button icon-start>
+      <ion-icon name="heart"></ion-icon>
+      已点赞
+    </button>
+
+    <div></div>
+
+  </div>
+
+</ion-content>

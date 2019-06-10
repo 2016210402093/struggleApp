@@ -1,0 +1,33 @@
+<link rel="stylesheet" href="../../assets/iconFamily/iconfont.css">
+
+<ion-header>
+  <ion-toolbar  mode="ios">
+    <ion-buttons start>
+      <button ion-button (click)="dismiss()">
+        <span ion-text color="black" showWhen="ios,android,windows">取消</span>
+      </button>
+    </ion-buttons>
+
+    <ion-title mode="ios">打卡</ion-title>
+
+    <ion-buttons end>
+      <button ion-button (click)="publish()">
+        <span ion-text color="primary" showWhen="ios,android,windows">发表</span>
+      </button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+<div class="clockArea">
+  <ion-textarea (ionChange)="getText()" maxlength="100" [(ngModel)]="textContent" class="textArea" placeholder="快来描述以下你现在的心情吧..." rows="6"></ion-textarea>
+  <p class="textNum">{{textNum}}/100</p>
+  <div class="uploadImg" (click)="presentActionSheet()">
+    <span [ngStyle]="{'display': !showPhoto? 'block' : 'none'}" class="iconfont camera">&#xe609;</span>
+    <p [ngStyle]="{'display': !showPhoto? 'block' : 'none'}">上传图片</p>
+    <img [ngStyle]="{'display': showPhoto? 'block' : 'none'}" class="imgStyle" src={{path}}>
+  </div>
+</div>
+
+</ion-content>

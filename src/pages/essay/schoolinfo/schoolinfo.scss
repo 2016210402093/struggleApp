@@ -1,0 +1,81 @@
+page-schoolinfo {
+
+  .head {
+    display: flex;
+    justify-items: center;
+    align-items: center;
+    height: 60px;
+    width: 100%;
+  }
+
+  .head .userPic {
+    float: left;
+  }
+
+  .userPic img {
+    width: 50px;
+    height: 50px;
+    border-radius: 25px;
+  }
+
+  .isCare {
+    float: right;
+  }
+
+  .isCare span {
+    text-align: left;
+    padding-left: 5px;
+    padding-right: 5px;
+    border-radius: 5px;
+  }
+
+  .userName {
+    flex: 2 0 auto;
+    margin-left: 5%;
+  }
+
+  .userName span {
+    font-size: 18px;
+    text-align: left;
+  }
+
+
+  .title {
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+  }
+
+  .content {
+    text-align: left;
+    font-size: 16px;
+  }
+
+  .time {
+    text-align: right;
+    color: #888888;
+    font-size: 14px;
+  }
+
+  .good {
+    text-align: right;
+    color: #888888;
+  }
+
+  .starAndHeart {
+    display: flex;
+    align-items: center;
+    justify-items: center;
+  }
+
+  .starAndHeart .button {
+    flex: 2 1 auto;
+    width: 100%;
+  }
+
+  .starAndHeart div {
+    flex: 1 1 auto;
+    width: 100%;
+  }
+
+}

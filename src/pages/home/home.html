@@ -1,0 +1,88 @@
+<link rel="stylesheet" href="../../assets/iconFamily/iconfont.css">
+
+<ion-content>
+  <div class="cover">
+    <ion-grid class="grid">
+      <ion-row>
+        <ion-col col-6>
+          <span class="date">{{daysRemaining}}</span>
+          <span class="dateUnit">天</span>
+        </ion-col>
+        <ion-col col-6 class="editBox">
+          <span (click)="goEditInfo()" class="iconfont">&#xe662;</span>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col col-12>
+          {{testYear}}年考研倒计时
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col col-12>
+          {{userSignature}}
+        </ion-col>
+      </ion-row>
+      <ion-row class="today">
+        <ion-col col-12>
+          {{currentDate}}
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+
+  <ion-card>
+    <ion-card-header>
+      <span class="iconfont Icon">&#xe654;</span>今日任务
+      <span class="add" (click)="addTask(todayType)">添加</span>
+    </ion-card-header>
+
+    <ion-list [ngStyle]="{'display': hasTodayTask? 'block' : 'none'}" *ngFor="let item of todayTask">
+      <button ion-item (click)="showTaskDetail(item)">
+        <span item-start class="iconfont star">&#xe61b;</span>
+        <span>{{item.title}}</span>
+        <span item-end [ngStyle]="{'color': item.isCompleted ? 'forestgreen' : 'gray'}" class="iconfont">&#xe65d;</span>
+      </button>
+    </ion-list>
+
+    <img [ngStyle]="{'display': !hasTodayTask? 'block' : 'none'}" src="../../assets/imgs/null.jpg">
+
+  </ion-card>
+
+
+  <ion-card>
+    <ion-card-header>
+      <span class="iconfont Icon">&#xe64f;</span>本周任务
+      <span class="add" (click)="addTask(weekType)">添加</span>
+    </ion-card-header>
+
+    <ion-list [ngStyle]="{'display': hasWeekTask? 'block' : 'none'}" *ngFor="let item of weekTask">
+      <button ion-item (click)="showTaskDetail(item)">
+        <span item-start class="iconfont star">&#xe61b;</span>
+        <span>{{item.title}}</span>
+        <span item-end [ngStyle]="{'color': item.isCompleted ? 'forestgreen' : 'gray'}" class="iconfont">&#xe65d;</span>
+      </button>
+    </ion-list>
+
+    <img [ngStyle]="{'display': !hasWeekTask? 'block' : 'none'}" src="../../assets/imgs/null.jpg">
+
+  </ion-card>
+
+  <ion-card>
+    <ion-card-header>
+      <span class="iconfont Icon">&#xe64e;</span>本月任务
+      <span class="add" (click)="addTask(monthType)">添加</span>
+    </ion-card-header>
+
+    <ion-list [ngStyle]="{'display': hasMonthTask? 'block' : 'none'}" *ngFor="let item of monthTask">
+      <button ion-item (click)="showTaskDetail(item)">
+        <span item-start class="iconfont star">&#xe61b;</span>
+        <span>{{item.title}}</span>
+        <span item-end [ngStyle]="{'color': item.isCompleted ? 'forestgreen' : 'gray'}" class="iconfont">&#xe65d;</span>
+      </button>
+    </ion-list>
+
+    <img [ngStyle]="{'display': !hasMonthTask? 'block' : 'none'}" src="../../assets/imgs/null.jpg">
+
+  </ion-card>
+
+</ion-content>

@@ -1,0 +1,53 @@
+<link rel="stylesheet" href="../../../assets/iconFamily/iconfont.css">
+
+<ion-header>
+  <ion-toolbar  mode="ios">
+    <ion-title mode="ios">
+      打卡记录
+    </ion-title>
+    <ion-buttons>
+      <button ion-button (click)="goBack()">
+        <span class="iconfont" style="font-size: 20px">&#xe799;</span>
+      </button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <p [ngStyle]="{'display': clockTotalNum<=0 ? 'block' : 'none'}" style="text-align: center">您还没有打过卡哦!</p>
+
+  <ion-list style="margin-bottom: unset">
+    <ion-card *ngFor="let item of myClock">
+
+      <ion-item>
+        <ion-avatar item-start>
+          <img src={{item.userImg}}>
+        </ion-avatar>
+        <h2>{{item.userName}}</h2>
+        <p>{{item.creationTime}}</p>
+
+        <!--<button class="btnStyle" ion-button icon-start clear small item-end>-->
+          <!--<ion-icon name="thumbs-up"></ion-icon>-->
+          <!--<div>{{item.likeNum}}</div>-->
+        <!--</button>-->
+
+      </ion-item>
+
+      <img src={{item.cardImg}}>
+
+      <ion-card-content>
+        <p>{{item.clockContent}}</p>
+      </ion-card-content>
+
+    </ion-card>
+
+    <ion-infinite-scroll (ionInfinite)="doInfinite($event)">
+      <ion-infinite-scroll-content
+        loadingSpinner="bubbles"
+        loadingText="加载中..."
+      ></ion-infinite-scroll-content>
+    </ion-infinite-scroll>
+  </ion-list>
+
+</ion-content>

@@ -1,0 +1,142 @@
+<link rel="stylesheet" href="../../assets/iconFamily/iconfont.css">
+
+<ion-content padding>
+
+  <div class="searchBar">
+    <input (focus)="searchInvitation()" type="text" placeholder="搜帖子" maxlength="30"/>
+    <ion-icon class="searchIcon" name="search"></ion-icon>
+  </div>
+
+  <div class="menu">
+    <ion-grid>
+      <ion-row>
+        <ion-col col-4>
+          <span (click)="writeEssayPage()" class="iconfont menuIcon" style="color: orange">&#xe652;</span>
+          <span (click)="writeEssayPage()" class="menuTitle">写帖子</span>
+        </ion-col>
+
+        <ion-col col-4>
+          <span (click)="goMeans()" class="iconfont menuIcon" style="color: cornflowerblue">&#xe601;</span>
+          <span (click)="goMeans()" class="menuTitle">找资料</span>
+        </ion-col>
+
+        <ion-col col-4>
+          <span (click)="clock()" class="iconfont menuIcon" style="color: #f53d3d">&#xe659;</span>
+          <span (click)="clock()" class="menuTitle">打卡</span>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+
+  <hr style="height: 2px">
+
+  <div class="segmentTitle">
+    <div class="segmentLeft">
+      <ion-segment [(ngModel)]="type">
+        <ion-segment-button value="essay">
+          最新热帖
+        </ion-segment-button>
+        <ion-segment-button value="clockIn">
+          打卡榜
+        </ion-segment-button>
+
+        <ion-segment-button value="schoolInfo">
+          院校资讯
+        </ion-segment-button>
+
+      </ion-segment>
+    </div>
+  </div>
+
+  <div [ngSwitch]="type">
+    <ion-list *ngSwitchCase="'essay'">
+
+      <ion-list style="margin-bottom: unset" *ngFor="let item of essay" (click)="readEssay(item)">
+        <ion-item>
+          <h2 style="margin-top: 3px">{{item.essayTitle}}</h2>
+          <p class="newsSubTitle">{{item.essaySubTitle}}</p>
+          <ion-grid>
+            <ion-row>
+              <ion-col>
+                <ion-icon class="newsIcon" name="thumbs-up">{{item.likeNum}}</ion-icon>
+              </ion-col>
+              <!--<ion-col>-->
+                <!--<ion-icon class="newsIcon" name="text">{{item.comment}}</ion-icon>-->
+              <!--</ion-col>-->
+              <ion-col>
+                <p>{{item.creationTime}}</p>
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+          <ion-avatar item-end>
+            <img class="newsImg" src={{item.essayImg}}>
+          </ion-avatar>
+        </ion-item>
+        <hr style="opacity: 0; margin: unset">
+      </ion-list>
+      <ion-infinite-scroll (ionInfinite)="doInfinite($event)">
+        <ion-infinite-scroll-content
+          loadingSpinner="bubbles"
+          loadingText="加载中..."
+        ></ion-infinite-scroll-content>
+      </ion-infinite-scroll>
+    </ion-list>
+
+    <ion-list *ngSwitchCase="'clockIn'">
+      <ion-list style="margin-bottom: unset" *ngFor="let item of clockIn">
+        <ion-card>
+
+          <ion-item>
+            <ion-avatar item-start>
+              <img src={{item.userImg}}>
+            </ion-avatar>
+            <h2>{{item.userName}}</h2>
+            <p>{{item.creationTime}}</p>
+
+<!--            <button class="btnStyle" ion-button icon-start clear small item-end>
+              <ion-icon name="thumbs-up"></ion-icon>
+              <div>{{item.likeNum}}</div>
+            </button>-->
+
+          </ion-item>
+
+          <img src={{item.cardImg}}>
+
+          <ion-card-content>
+            <p>{{item.clockContent}}</p>
+          </ion-card-content>
+
+        </ion-card>
+      </ion-list>
+      <ion-infinite-scroll (ionInfinite)="doInfinite($event)">
+        <ion-infinite-scroll-content
+          loadingSpinner="bubbles"
+          loadingText="加载中..."
+        ></ion-infinite-scroll-content>
+      </ion-infinite-scroll>
+    </ion-list>
+
+    <ion-list *ngSwitchCase="'schoolInfo'">
+      <ion-list style="margin-bottom: unset" *ngFor="let item of schoolInfo" (click)="readySchoolInfo(item)">
+        <ion-item>
+          <ion-avatar item-start>
+            <img class="clockImg" src={{item.infoImg}}>
+          </ion-avatar>
+          <h2 style="margin-top: 3px">{{item.infoTitle}}</h2>
+          <p>{{item.infoSubTitle}}</p>
+          <p>{{item.creationTime}}</p>
+        </ion-item>
+        <hr style="margin: unset; opacity: 0">
+      </ion-list>
+
+      <ion-infinite-scroll (ionInfinite)="doInfinite($event)">
+        <ion-infinite-scroll-content
+          loadingSpinner="bubbles"
+          loadingText="加载中..."
+        ></ion-infinite-scroll-content>
+      </ion-infinite-scroll>
+    </ion-list>
+  </div>
+
+</ion-content>
+

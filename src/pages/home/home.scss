@@ -1,0 +1,84 @@
+
+page-home {
+  ion-content {
+    background-color: #fafafa !important;
+  }
+
+  .cover {
+    background: url("../../assets/imgs/homeBackground.jpg") no-repeat;
+    background-size: 100%;
+    height: 180px;
+    width: 100%;
+    color: #f4f4f4;
+    position: relative;
+  }
+
+  .grid ion-row {
+    padding-left: 5px;
+    padding-top: 5px;
+  }
+
+  .grid ion-row ion-col {
+    padding: unset;
+  }
+
+  .cover .date {
+    font-size: 40px;
+    margin-right: 5px;
+    line-height: 1;
+    vertical-align: bottom;
+  }
+
+
+  .cover .dateUnit {
+    font-size: 18px;
+    line-height: 2;
+  }
+
+  .editBox {
+    position: relative;
+  }
+
+  .editBox span {
+    position: absolute;
+    right: 10px;
+    top: 15px;
+    font-size: 20px;
+  }
+
+  .today {
+    position: absolute;
+    bottom: 20px;
+    font-size: 20px;
+  }
+
+
+  .Icon {
+    font-size: 20px !important;
+    margin-right: 10px;
+    color: #26b5b1;
+  }
+
+  ion-card ion-card-header{
+    color: gray !important;
+  }
+
+  .add {
+    float: right;
+  }
+
+  .star {
+    color: goldenrod !important;
+  }
+
+  /*
+  .notComplete {
+    color: gray !important;
+  }
+
+  .complete {
+    color: forestgreen !important;
+  }
+  */
+
+}

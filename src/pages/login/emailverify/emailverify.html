@@ -1,0 +1,33 @@
+<link rel="stylesheet" href="../../../assets/iconFamily/iconfont.css">
+
+<ion-header>
+  <ion-toolbar  mode="ios">
+    <ion-title mode="ios">
+      邮箱验证
+    </ion-title>
+    <ion-buttons>
+      <button ion-button (click)="goBack()">
+        <span class="iconfont" style="font-size: 20px">&#xe799;</span>
+      </button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-list>
+    <button ion-item block outline no-lines>
+      <ion-input type="text" [(ngModel)]="userName" placeholder="要找回的用户名"></ion-input>
+    </button>
+  </ion-list>
+  <ion-list class="code">
+    <button ion-item block outline no-lines>
+      <ion-input type="text" [(ngModel)]="verifyCode" placeholder="邮箱验证码"></ion-input>
+    </button>
+    <span [ngStyle]="{'display': time===180 ? 'block' : 'none'}" (click)="sendMessage()" item-right class="pw-forgot">获取验证码</span>
+    <span [ngStyle]="{'display': time!==180 ? 'block' : 'none'}" item-right class="pw-forgot">{{time}}(s)</span>
+  </ion-list>
+  <hr style="height: 2px; margin: unset">
+  <ion-list padding-top>
+    <button ion-item block color="danger" border class="btn-register" (click)="verify()">验证</button>
+  </ion-list>
+</ion-content>

@@ -1,0 +1,35 @@
+<link rel="stylesheet" href="../../../assets/iconFamily/iconfont.css">
+
+<ion-header>
+  <ion-toolbar  mode="ios">
+    <ion-title mode="ios">
+      关注的人
+    </ion-title>
+    <ion-buttons>
+      <button ion-button (click)="goBack()">
+        <span class="iconfont" style="font-size: 20px">&#xe799;</span>
+      </button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <p [ngStyle]="{'display': userTotalNum<=0 ? 'block' : 'none'}" style="text-align: center">您还没有关注其他用户呢!</p>
+
+  <ion-list style="margin-bottom: unset">
+    <ion-item *ngFor="let item of userList" (click)="goOthersHome(item)">
+      <ion-avatar item-start>
+        <img src={{item.userImg}}>
+      </ion-avatar>
+      <h2>{{item.userName}}</h2>
+      <p>{{item.userSignature}}</p>
+    </ion-item>
+    <ion-infinite-scroll (ionInfinite)="doInfinite($event)">
+      <ion-infinite-scroll-content
+        loadingSpinner="bubbles"
+        loadingText="加载中..."
+      ></ion-infinite-scroll-content>
+    </ion-infinite-scroll>
+  </ion-list>
+</ion-content>

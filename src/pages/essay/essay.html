@@ -1,0 +1,108 @@
+<link rel="stylesheet" href="../../assets/iconFamily/iconfont.css">
+
+<ion-header>
+  <ion-toolbar  mode="ios">
+    <ion-title mode="ios">
+      帖子详情
+    </ion-title>
+    <ion-buttons>
+      <button ion-button (click)="goBack()">
+        <span class="iconfont" style="font-size: 20px">&#xe799;</span>
+      </button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+
+  <div class="head">
+    <div class="userPic">
+      <img src={{essay.userImg}}>
+    </div>
+    <div class="userName">
+      <span>{{essay.userName}}</span>
+    </div>
+    <div class="isCare" [ngStyle]="{'display': !isSelf? 'block' : 'none'}">
+      <span (click)="carePerson()" [ngStyle]="{'display': !isCarePerson? 'block' : 'none'}" style="color: red; border: 1px red solid;">关注</span>
+      <span (click)="carePerson()" [ngStyle]="{'display': isCarePerson? 'block' : 'none'}" style="color: gray; border: 1px gray solid;">取关</span>
+    </div>
+    <div class="isCare" [ngStyle]="{'display': isShow ? 'block' : 'none'}">
+      <span (click)="deleteEssay()" style="color: red; border: 1px red solid;">删除</span>
+    </div>
+  </div>
+
+  <h2 class="title">{{essay.title}}</h2>
+
+  <p class="content" *ngFor="let item of essayContent">
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{item}}
+  </p>
+
+  <p class="time">{{essay.creationTime}}</p>
+
+  <p class="good" >
+    <ion-icon name="thumbs-up"></ion-icon>
+    <span>{{essay.likeNum}}</span>
+  </p>
+
+  <div class="starAndHeart" [ngStyle]="{'display': !isSelf? '' : 'none'}">
+
+    <div></div>
+
+    <button (click)="collectEssay()" [ngStyle]="{'display': !isCollect? 'block' : 'none'}"  color="gold"  outline ion-button icon-start>
+      <ion-icon name="star"></ion-icon>
+      收藏
+    </button>
+
+    <button (click)="collectEssay()" [ngStyle]="{'display': isCollect? 'block' : 'none'}"  color="gray"  outline ion-button icon-start>
+      <ion-icon name="star"></ion-icon>
+      已收藏
+    </button>
+
+    <div></div>
+
+    <button (click)="goodEssay()" [ngStyle]="{'display': !isLike? 'block' : 'none'}"  color="lightred"  outline ion-button icon-start>
+      <ion-icon name="heart"></ion-icon>
+      点赞
+    </button>
+
+    <button (click)="goodEssay()" [ngStyle]="{'display': isLike? 'block' : 'none'}" color="gray"  outline ion-button icon-start>
+      <ion-icon name="heart"></ion-icon>
+      已点赞
+    </button>
+
+    <div></div>
+
+  </div>
+
+
+  <!--评论-->
+
+  <p style="font-size: 14px; color: #7c7c7c">用户评论</p>
+
+  <p style="text-align: center" [ngStyle]="{'display': commentList.length <=0 ? 'block' : 'none'}">还没有用户评论哦!</p>
+
+  <ion-list style="margin-bottom: unset" [ngStyle]="{'display': commentList.length >0 ? 'block' : 'none'}">
+    <ion-item *ngFor="let item of commentList">
+      <ion-avatar item-start>
+        <img src={{item.userImg}}>
+      </ion-avatar>
+      <h2>{{item.userName}}</h2>
+      <h3 class="commentTime">{{item.creationTime}}</h3>
+      <p>{{item.commentContent}}</p>
+    </ion-item>
+  </ion-list>
+
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+    <!--<input />-->
+    <textarea class="userInput" maxlength="50"  [(ngModel)]="userInput"></textarea>
+    <ion-buttons end>
+      <button ion-button icon-end color="royal" (click)="sendComment()">
+        发送
+        <ion-icon name="send"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-footer>

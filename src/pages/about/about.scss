@@ -1,0 +1,97 @@
+page-about {
+
+  .content {
+    padding-bottom: unset !important;
+  }
+
+  .scroll-content {
+    padding-bottom: unset !important;
+  }
+
+  .searchBar {
+    position: relative;
+    height: 40px;
+    width: 100%;
+  }
+
+  .searchBar input {
+    padding-left: 40px;
+    height: 35px;
+    background: #ebebeb;
+    border-style: unset;
+    width: 100%;
+    border-radius: 15px;
+  }
+
+  .searchIcon {
+    position: absolute;
+    left: 16px;
+    top: 8px;
+    color: forestgreen;
+    font-size: 20px;
+  }
+
+  .menu {
+
+  }
+
+  .menu ion-col {
+    text-align: center;
+  }
+
+  .menuIcon {
+    display: block;
+    font-size: 40px !important;
+  }
+
+  .menuTitle {
+    display: block;
+    font-weight: bold;
+    padding-top: 5px;
+  }
+
+
+  //.segmentTitle {
+  //}
+  //
+  //.segmentLeft {
+  //  display: inline-block;
+  //  width: 60%;
+  //}
+  //
+  //.change {
+  //  display: inline-block;
+  //  width: 35%;
+  //  text-align: right;
+  //  color: #222222;
+  //  font-weight: bold;
+  //  font-size: 14px;
+  //}
+
+  .clockImg {
+    width: 70px !important;
+    height: 70px !important;
+    border-radius: 35px !important;
+  }
+
+  .newsImg {
+    height: 70px !important;
+    border-radius: 5px !important;
+    width: 70px !important;
+  }
+
+  .newsSubTitle {
+    white-space: normal !important;
+    font-size: 14px !important;
+  }
+
+  .newsIcon {
+    font-size: 14px;
+    color: #888888;
+  }
+
+  .btnStyle {
+    color: #222222;
+  }
+
+}

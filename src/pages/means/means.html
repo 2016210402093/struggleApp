@@ -1,0 +1,83 @@
+<link rel="stylesheet" href="../../assets/iconFamily/iconfont.css">
+
+<ion-header>
+  <ion-toolbar  mode="ios">
+    <ion-title mode="ios">
+      资料库
+    </ion-title>
+    <ion-buttons>
+      <button ion-button (click)="goBack()">
+        <span class="iconfont" style="font-size: 20px">&#xe799;</span>
+      </button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+
+  <div class="meansTitle">
+    <ion-segment [(ngModel)]="type">
+      <ion-segment-button value="politics">
+        政治
+      </ion-segment-button>
+      <ion-segment-button value="english">
+        英语
+      </ion-segment-button>
+
+      <ion-segment-button value="math">
+        数学
+      </ion-segment-button>
+
+      <ion-segment-button value="major">
+        专业课
+      </ion-segment-button>
+
+    </ion-segment>
+  </div>
+
+  <div [ngSwitch]="type">
+    <ion-list *ngSwitchCase="'politics'" style="margin: unset">
+      <div *ngFor="let item of politics" (click)="download(item)">
+        <ion-item no-lines>
+          <h2>{{item.fileName}}</h2>
+          <p>{{item.fileContent}}</p>
+          <span item-end style="color: orange">免费</span>
+        </ion-item>
+        <hr style="height: 1px; margin: unset">
+      </div>
+    </ion-list>
+
+    <ion-list *ngSwitchCase="'english'" style="margin: unset">
+      <div *ngFor="let item of english" (click)="download(item)">
+        <ion-item no-lines>
+          <h2>{{item.fileName}}</h2>
+          <p>{{item.fileContent}}</p>
+          <span item-end style="color: orange">免费</span>
+        </ion-item>
+        <hr style="height: 1px; margin: unset">
+      </div>
+    </ion-list>
+
+    <ion-list *ngSwitchCase="'math'" style="margin: unset">
+      <div *ngFor="let item of math" (click)="download(item)">
+        <ion-item no-lines>
+          <h2>{{item.fileName}}</h2>
+          <p>{{item.fileContent}}</p>
+          <span item-end style="color: orange">免费</span>
+        </ion-item>
+        <hr style="height: 1px; margin: unset">
+      </div>
+    </ion-list>
+
+    <ion-list *ngSwitchCase="'major'" style="margin: unset">
+      <div *ngFor="let item of major" (click)="download(item)">
+        <ion-item no-lines>
+          <h2>{{item.fileName}}</h2>
+          <p>{{item.fileContent}}</p>
+          <span item-end style="color: orange">免费</span>
+        </ion-item>
+        <hr style="height: 1px; margin: unset">
+      </div>
+    </ion-list>
+  </div>
+
+</ion-content>

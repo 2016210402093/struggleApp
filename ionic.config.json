@@ -1,0 +1,7 @@
+{
+  "name": "postgraduateApp",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "ionic-angular"
+}

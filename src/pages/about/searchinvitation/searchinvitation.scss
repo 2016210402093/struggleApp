@@ -1,0 +1,47 @@
+page-searchinvitation {
+
+  ion-content {
+    background: #fafafa !important;
+  }
+
+  .searchBar {
+    padding: 16px;
+    position: relative;
+    height: 70px;
+    width: 100%;
+    display: flex;
+    background-color: white !important;
+  }
+
+  .searchBar input {
+    flex: 4 1 0;
+    padding-left: 40px;
+    height: 35px;
+    background: #ebebeb;
+    border-style: unset;
+    border-radius: 15px;
+  }
+
+  .searchIcon {
+    position: absolute;
+    left: 32px;
+    top: 24px;
+    color: forestgreen;
+    font-size: 20px;
+  }
+
+  .cancelBtn {
+    flex: 1 1 0;
+    align-self: center;
+    justify-items: center;
+    text-align: center;
+    color: #333333;
+  }
+
+  .notFound {
+    margin-top: 50px;
+    text-align: center;
+    color: #888888;
+  }
+
+}

@@ -1,0 +1,47 @@
+<link rel="stylesheet" href="../../assets/iconFamily/iconfont.css">
+
+<ion-content>
+
+  <div class="user">
+    <span (click)="exit()" class="iconfont exit">&#xe60a;</span>
+    <img class="userImg" src={{userImg}}>
+    <p class="name">{{userName}}</p>
+    <p class="goal">目标：{{goalSchool}}</p>
+  </div>
+
+  <ion-list class="menu">
+    <ion-item (click)="goMyEssay()">
+      <span style="color: limegreen" class="iconfont leftIcon">&#xe619;</span>
+      我的贴子
+      <span item-end class="iconfont rightIcon">&#xe79a;</span>
+    </ion-item>
+
+    <ion-item (click)="goMyCollect()">
+      <span style="color: #f53d3d" class="iconfont leftIcon">&#xe60e;</span>
+      我的收藏
+      <span item-end class="iconfont rightIcon">&#xe79a;</span>
+    </ion-item>
+
+    <ion-item (click)="goMyClock()">
+      <span style="color: cornflowerblue" class="iconfont leftIcon">&#xe648;</span>
+      打卡记录
+      <span item-end class="iconfont rightIcon">&#xe79a;</span>
+    </ion-item>
+
+    <ion-item (click)="goConcernedpeoplePage()">
+      <span style="color: gold" class="iconfont leftIcon">&#xe81a;</span>
+      关注的人
+      <span item-end class="iconfont rightIcon">&#xe79a;</span>
+    </ion-item>
+  </ion-list>
+
+  <ion-list class="menu">
+    <ion-item (click)="goEditInfo()">
+      <span style="color: chocolate" class="iconfont leftIcon">&#xe662;</span>
+      修改信息
+      <span item-end class="iconfont rightIcon">&#xe79a;</span>
+    </ion-item>
+  </ion-list>
+
+</ion-content>
+

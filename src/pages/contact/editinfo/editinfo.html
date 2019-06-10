@@ -1,0 +1,69 @@
+<link rel="stylesheet" href="../../../assets/iconFamily/iconfont.css">
+
+<ion-header>
+  <ion-toolbar  mode="ios">
+    <ion-title mode="ios">
+      修改信息
+    </ion-title>
+    <ion-buttons>
+    <button ion-button (click)="goBack()">
+      <span class="iconfont" style="font-size: 20px">&#xe799;</span>
+    </button>
+  </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <p class="prompt">基础信息</p>
+
+  <ion-list>
+    <ion-item (click)="chosePhoto()">
+      <ion-avatar item-end>
+        <img src={{userInfo.userImg}}>
+      </ion-avatar>
+      <span item-end class="iconfont" style="font-size: 20px">&#xe79a;</span>
+      <h2>头像</h2>
+    </ion-item>
+
+    <ion-item (click)="cantUpdate()">
+      <p item-end>{{userInfo.userName}}</p>
+      <span item-end class="iconfont" style="font-size: 20px">&#xe79a;</span>
+      <h2>用户名</h2>
+    </ion-item>
+
+    <ion-item (click)="updateTestYear()">
+      <p item-end>{{userInfo.testYear}}</p>
+      <span item-end class="iconfont" style="font-size: 20px">&#xe79a;</span>
+      <h2>考试年份</h2>
+    </ion-item>
+
+    <ion-item (click)="updateInfo('goal')">
+      <p item-end class="hiddenOverFlow">{{userInfo.goalSchool}}</p>
+      <span item-end class="iconfont" style="font-size: 20px">&#xe79a;</span>
+      <h2>目标</h2>
+    </ion-item>
+
+    <ion-item (click)="updateInfo('signature')">
+      <p item-end class="hiddenOverFlow">{{userInfo.userSignature }}</p>
+      <span item-end class="iconfont" style="font-size: 20px">&#xe79a;</span>
+      <h2>签名</h2>
+    </ion-item>
+  </ion-list>
+
+  <p class="prompt">账号信息</p>
+
+  <ion-list>
+    <ion-item (click)="updatePassword()">
+      <span item-end class="iconfont" style="font-size: 20px">&#xe79a;</span>
+      <h2>修改密码</h2>
+    </ion-item>
+
+    <ion-item (click)="updateEmail()">
+      <p item-end>{{userInfo.userEmail}}</p>
+      <span item-end class="iconfont" style="font-size: 20px">&#xe79a;</span>
+      <h2>修改邮箱</h2>
+    </ion-item>
+  </ion-list>
+
+</ion-content>

@@ -1,0 +1,50 @@
+page-writeessay {
+
+  ion-content {
+    background: #fafafa !important;
+  }
+
+  .clockArea {
+    margin-top: -20px;
+    background-color: white;
+    padding: 25px 10px 10px;
+  }
+
+  .textArea {
+    height: 50vh;
+  }
+
+  .textNum {
+    text-align: right;
+    padding-right: 15px;
+    color: #444444;
+
+  }
+
+  .uploadImg {
+    width: 100px;
+    height: 100px;
+    background: #f1f3f4;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+
+
+  .camera {
+    font-size: 30px !important;
+    color: #444444 !important;
+  }
+
+  .uploadImg p {
+    color: #555555;
+    margin: unset;
+    padding-top: 10px;
+  }
+
+  .imgStyle {
+    width: 100px;
+    height: 100px;
+  }
+}

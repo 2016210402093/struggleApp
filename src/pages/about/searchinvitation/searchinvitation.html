@@ -1,0 +1,20 @@
+<ion-content>
+  <div class="searchBar">
+    <input id="searchInput" [(ngModel)]="textContent"  autofocus="autofocus" (keydown)="searchInfo()" type="text" placeholder="搜帖子" maxlength="30"/>
+    <ion-icon class="searchIcon" name="search"></ion-icon>
+
+    <span class="cancelBtn" (click)="dismiss()">取消</span>
+  </div>
+
+  <ion-list [ngStyle]="{'display': isGetInfo? 'block' : 'none'}" style="margin-top: 10px">
+    <button style="padding-left: unset" ion-item *ngFor="let item of results" (click)="readEssay(item)">
+      <ion-icon style="padding-left: 10px; color: #cfcfcf" name="search"></ion-icon>
+      <span style="padding-left: 10px">{{ item.essayTitle }}</span>
+    </button>
+  </ion-list>
+
+
+  <p [ngStyle]="{'display': !isGetInfo? 'block' : 'none'}" class="notFound">很抱歉，未搜索到相关内容</p>
+
+
+</ion-content>

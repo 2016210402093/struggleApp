@@ -1,0 +1,49 @@
+<link rel="stylesheet" href="../../assets/iconFamily/iconfont.css">
+
+<ion-header>
+  <ion-toolbar  mode="ios">
+    <ion-buttons start>
+      <button ion-button (click)="dismiss()">
+        <span ion-text color="black" showWhen="ios,android,windows">取消</span>
+      </button>
+    </ion-buttons>
+
+    <ion-title mode="ios">写帖子</ion-title>
+
+    <ion-buttons end>
+      <button ion-button (click)="publish()">
+        <span ion-text color="primary" showWhen="ios,android,windows">发表</span>
+      </button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <div class="clockArea">
+
+    <ion-list>
+      <ion-item>
+        <ion-label floating>标题</ion-label>
+        <ion-input [(ngModel)]="textTitle" type="text" maxlength="12"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label floating>帖子介绍</ion-label>
+        <ion-textarea [(ngModel)]="textSubTitle" type="text" maxlength="40" rows="3"></ion-textarea>
+      </ion-item>
+      <ion-item>
+        <ion-label floating>帖子正文</ion-label>
+        <ion-textarea (ionChange)="getText()" maxlength="600" [(ngModel)]="textContent" class="textArea" rows="15" ></ion-textarea>
+        <p class="textNum">{{textNum}}/600</p>
+      </ion-item>
+    </ion-list>
+
+    <div class="uploadImg" (click)="presentActionSheet()">
+      <span [ngStyle]="{'display': !showPhoto? 'block' : 'none'}" class="iconfont camera">&#xe609;</span>
+      <p [ngStyle]="{'display': !showPhoto? 'block' : 'none'}">上传图片</p>
+      <img [ngStyle]="{'display': showPhoto? 'block' : 'none'}" class="imgStyle" src={{path}}>
+    </div>
+  </div>
+
+</ion-content>

@@ -1,0 +1,93 @@
+// http://ionicframework.com/docs/theming/
+.action-sheet-md {
+  text-align: center;
+}
+
+.action-sheet-md .action-sheet-container {
+  padding: 0 10px;
+}
+
+.action-sheet-md .action-sheet-group {
+  overflow: hidden;
+  margin-bottom: 8px;
+  border-radius: 13px;
+  background: #f9f9f9;
+}
+
+.action-sheet-md .action-sheet-group:last-child {
+  margin-bottom: 10px;
+}
+
+.action-sheet-md .action-sheet-title {
+  padding: 1.5rem;
+  border-bottom: 0.55px solid #d6d6da;
+  border-radius: 0;
+  font-size: 1.3rem;
+  font-weight: 400;
+  text-align: center;
+  color: #8f8f8f;
+}
+
+.action-sheet-md .action-sheet-button {
+  margin: 0;
+  padding: 18px;
+  min-height: 5.6rem;
+  border-bottom: 0.55px solid #d6d6da;
+  font-size: 1.6rem;
+  color: #007aff;
+  background: transparent;
+}
+
+.action-sheet-md .action-sheet-button:last-child {
+  border-bottom: 0;
+}
+
+.action-sheet-md .action-sheet-button.activated {
+  margin-top: -0.55px;
+  border-top: 5px solid #cccccc;
+  border-bottom-color: #cccccc;
+  background: #ebebeb;
+}
+
+.action-sheet-md .action-sheet-selected {
+  font-weight: bold;
+  background: #fff;
+}
+
+.action-sheet-md .action-sheet-destructive {
+  color: #007aff;
+}
+
+.action-sheet-md .action-sheet-cancel {
+  font-weight: 600;
+  background: #fff;
+}
+.action-sheet-md .action-sheet-group:last-child {
+  margin-bottom: 8px;
+}
+
+.action-sheet-md .action-sheet-group:last-child {
+  padding-bottom: 0rem;
+}
+
+
+.zm-action-button {
+  .button-inner {
+    justify-content: center !important;
+  }
+}
+
+
+// App Global Sass
+// --------------------------------------------------
+// Put style rules here that you want to apply globally. These
+// styles are for the entire app and not just one component.
+// Additionally, this file can be also used as an entry point
+// to import other Sass files to be included in the output CSS.
+//
+// Shared Sass variables, which can be used to adjust Ionic's
+// default Sass variables, belong in "theme/variables.scss".
+//
+// To declare rules for a specific mode, create a child rule
+// for the .md, .ios, or .wp mode classes. The mode class is
+// automatically applied to the <body> element in the app.

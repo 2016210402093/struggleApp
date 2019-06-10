@@ -1,0 +1,60 @@
+<!--
+  Generated template for the AddTaskPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-toolbar  mode="ios">
+    <ion-title mode="ios">
+      添加任务
+    </ion-title>
+    <ion-buttons>
+      <button ion-button (click)="dismiss()">
+        <span ion-text color="primary" showWhen="ios,android,windows">取消</span>
+      </button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-list>
+    <ion-item>
+      <ion-label floating>任务名</ion-label>
+      <ion-input [(ngModel)]="title" type="text" maxlength="12"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label floating>任务介绍</ion-label>
+      <ion-textarea [(ngModel)]="description" type="text" maxlength="50" rows="4"></ion-textarea>
+    </ion-item>
+  </ion-list>
+
+  <ion-list [ngStyle]="{'display': isTaskTypeToday? 'block' : 'none' }">
+    <ion-item>
+      <ion-label>截止时间</ion-label>
+      <ion-datetime placeholder="点击选择时间" mode="ios" displayFormat="HH:mm" [(ngModel)]="deadLine"></ion-datetime>
+    </ion-item>
+  </ion-list>
+
+  <ion-list [ngStyle]="{'display': !isTaskTypeToday? 'block' : 'none' }">
+    <ion-item>
+      <ion-label>截止时间</ion-label>
+
+      <ion-datetime placeholder="点击选择时间" mode="ios" min="2019" max="2020" displayFormat="YYYY-MM-DD HH:mm" [(ngModel)]="deadLine"></ion-datetime>
+    </ion-item>
+  </ion-list>
+
+  <ion-list>
+    <ion-item>
+      <ion-label style="color: #999999">消息推送</ion-label>
+      <ion-toggle  mode="ios" [(ngModel)]="isNotified"></ion-toggle>
+    </ion-item>
+  </ion-list>
+
+  <span class="remind">一旦添加不可删除,开启消息推送后，将提早1小时提醒</span>
+
+  <button ion-button class="addBtn" (click)="addTask()">添加</button>
+
+</ion-content>
